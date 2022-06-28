@@ -1,0 +1,6 @@
+INSERT INTO INTERVIEWEE(first_name, last_name) VALUES('Tural', 'Ismayilov')
+INSERT INTO INTERVIEWEE (first_name, last_name) VALUES('Ayyub', 'Mammadli')
+INSERT INTO INTERVIEWEE(first_name, last_name) VALUES('Mahammad', 'Isayev')
+INSERT INTO INTERVIEWEE(first_name, last_name) VALUES('Elmar', 'Mammadaliyev')
+INSERT INTO INTERVIEWEE(first_name, last_name) VALUES('Matlab', 'Salmanov')
+INSERT INTO INTERVIEWEE(first_name, last_name) VALUES('Nazim', 'Babayev')

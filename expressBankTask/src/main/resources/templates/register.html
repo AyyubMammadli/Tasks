@@ -1,0 +1,101 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="thymeleaf.org">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        Body {
+            font-family: Calibri, Helvetica, sans-serif;
+            background-color: antiquewhite;
+        }
+
+        button {
+            background-color: #4CAF50;
+            width: 100%;
+            color: orange;
+            padding: 15px;
+            margin: 10px 0px;
+            border: none;
+            cursor: pointer;
+        }
+
+        form {
+            border: 3px solid #f1f1f1;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            margin: 8px 0;
+            padding: 12px 20px;
+            display: inline-block;
+            border: 2px solid green;
+            box-sizing: border-box;
+        }
+
+        button:hover {
+            opacity: 0.7;
+        }
+
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            margin: 10px 5px;
+        }
+
+
+        .container {
+            padding: 25px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+
+<body>
+
+<div th:if="${param.error}">
+    <font size="+3"><p style="color:red"> Invalid username and password. Please Try Again </p></font>
+</div>
+<div th:if="${param.logout}">
+    You have been logged out.
+</div>
+<form th:action="@{/register}" th:object="${user}" method="POST">
+    <div class="container">
+        <div><p style="color:black;font-size:30px;">
+            <center> Full name:</center>
+            </p> </font>
+            <br>
+            <input type="text" name="full_name" th:field="*{full_name}" />  </label>
+        </div>
+
+        <div>
+            <p style="color:black;font-size:30px;">
+            <center> Username:</center>
+            </p>   </font>
+            <br>
+            <input type="text" name="username" th:field="*{username}"/> </label>
+        </div>
+
+        <div>
+            <p style="color:black;font-size:30px;">
+            <center> Password:</center>
+            </p>   </font>
+            <br>
+            <input type="password" name="password" th:field="*{password}"/>
+            </label>
+
+        </div>
+    </div>
+    <br>
+    <br>
+    <div><input type="submit" value="Register"/></div>
+</form>
+
+<a th:href="@{/login}">Login</a>
+</body>
+
+</body>
+</html>

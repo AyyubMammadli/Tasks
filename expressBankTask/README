@@ -1,0 +1,63 @@
+
+ExpressBank Task
+
+I did not deeply understand the task, so I wrote what I could.
+
+This web app is about signing up or logging in of user to the website in order to do some CRUD operations on the given data.
+Lets see what we have done in code part.
+
+We have 7 packages: Bean, Config, Controller, Entity, exception, Repository, and Service.
+
+Bean package
+
+ In Bean package we have IntervieweeBean class in which we have entities (firstName, lastName, id) and we have
+  getters and setter to access those entities from different classes.
+
+  Config Package
+
+  Here we have 3 classes JPAConfig, MvcConfig, WebSecurityConfig. The WebSecurityConfig class is annotated with @EnableWebSecurity to
+  enable Spring Security's web security support and provide the Spring MVC integration. It also extends WebSecurityConfigurerAdapter
+  and overrides a couple of its methods to set some specifics of the web security configuration. Here we overrided  public void configure(AuthenticationManagerBuilder auth)
+  and configure(HttpSecurity http).
+
+
+ Controller Package
+
+ In this package we have 2 classes IntervieweeController and RegisterController. After logging in user redirects to the mappings
+ of IntervieweeController. Basically we defined there for instance if user deletes something then to which link he/she redirects.
+ In RegisterController we defined where user redirects while signing up.
+
+
+ Entity Package
+
+ Here we have 3 classes Interviewee, RegisterDto and UserDetails.
+ Interviewee - We did some data validation with using @NotBlank annotation. For instance, @NotBlank(message ="Please enter name.
+ It can not be blank!"). Also we used getters and setters there.
+
+ RegisterDto- here we just defined username, password and first_name. With the help of lombok and @Data annotation we get automatic
+ getters and setters based on username, password and first_name.
+
+ UserDetails- this class is the same with Interviewee but this class is for registering users.
+
+
+  exception package
+
+  Here we have only one class GlobalExceptionHandler. In this class we just wrote handleGeneralExceptions method in order to see
+  the exceptions not in the console but in the website.
+
+
+  Repository Package
+
+   In this package we have 2 classes IntervieweeRepository and UserRepository.  In both we extended CRUD class in order to be able
+   to do crud operations in our web app.
+
+   Service Package
+
+   We have 2 classes here IntervieweeService and UserService. Again one for interviewee and one for signing in user. We wrote there some
+   logic and we can access them through controllers.
+
+   In Templates Package we have html pages where we gave design to our web page.
+   In resources folder we have data.sql file where we stored interviewee data (their names and surnames).
+
+
+
